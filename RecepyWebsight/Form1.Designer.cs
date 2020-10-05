@@ -52,18 +52,19 @@
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(239, 571);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(212, 457);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // button1
             // 
             this.button1.AutoSize = true;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 30);
-            this.button1.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.button1.Location = new System.Drawing.Point(0, 24);
+            this.button1.Margin = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 39);
+            this.button1.Size = new System.Drawing.Size(208, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -72,10 +73,10 @@
             // 
             this.button2.AutoSize = true;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(0, 99);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.button2.Location = new System.Drawing.Point(0, 83);
+            this.button2.Margin = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(234, 39);
+            this.button2.Size = new System.Drawing.Size(208, 35);
             this.button2.TabIndex = 3;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
@@ -84,10 +85,10 @@
             // 
             this.button3.AutoSize = true;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 168);
-            this.button3.Margin = new System.Windows.Forms.Padding(0, 30, 0, 0);
+            this.button3.Location = new System.Drawing.Point(0, 142);
+            this.button3.Margin = new System.Windows.Forms.Padding(0, 24, 0, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(234, 39);
+            this.button3.Size = new System.Drawing.Size(208, 35);
             this.button3.TabIndex = 5;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -107,9 +108,10 @@
             listViewItem1.Tag = "";
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView1.Location = new System.Drawing.Point(239, 0);
+            this.listView1.Location = new System.Drawing.Point(212, 0);
+            this.listView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(696, 571);
+            this.listView1.Size = new System.Drawing.Size(614, 457);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -136,11 +138,12 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 571);
+            this.ClientSize = new System.Drawing.Size(826, 457);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.flowLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.flowLayoutPanel1.ResumeLayout(false);
