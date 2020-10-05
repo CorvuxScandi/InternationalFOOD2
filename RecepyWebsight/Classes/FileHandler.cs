@@ -9,7 +9,7 @@ namespace RecepyWebsight.Classes
 {
     public static class FileHandler
     {
-        public static void AddAdmin()
+        public static void AddAdmin(Admins admin)
         {
             string filePath = @"..\..\TextFiles\Admin.txt";
 
@@ -17,7 +17,7 @@ namespace RecepyWebsight.Classes
             {
                 using (StreamWriter writer = new StreamWriter(filePath))
                 {
-                    writer.WriteLine()
+                    writer.WriteLine(admin.Name + "," + admin.Password + "," + admin.Email);
                 }
             }
             catch
@@ -25,5 +25,7 @@ namespace RecepyWebsight.Classes
 
             }
         }
+
+
     }
 }
