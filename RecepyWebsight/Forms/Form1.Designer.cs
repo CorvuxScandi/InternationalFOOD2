@@ -35,8 +35,8 @@
             this.ImgFood = new System.Windows.Forms.PictureBox();
             this.lstRecepie = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtSerch = new System.Windows.Forms.TextBox();
             this.cbmFoodType = new System.Windows.Forms.ComboBox();
+            this.txtSerch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numRecepie)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgFood)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -65,6 +65,7 @@
             this.cmdEdit.TabIndex = 3;
             this.cmdEdit.Text = "Redigera Recept";
             this.cmdEdit.UseVisualStyleBackColor = true;
+            this.cmdEdit.Visible = false;
             // 
             // cmdSerch
             // 
@@ -125,15 +126,6 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // txtSerch
-            // 
-            this.txtSerch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSerch.Location = new System.Drawing.Point(8, 251);
-            this.txtSerch.Margin = new System.Windows.Forms.Padding(5);
-            this.txtSerch.Name = "txtSerch";
-            this.txtSerch.Size = new System.Drawing.Size(221, 35);
-            this.txtSerch.TabIndex = 5;
-            // 
             // cbmFoodType
             // 
             this.cbmFoodType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -143,6 +135,15 @@
             this.cbmFoodType.Name = "cbmFoodType";
             this.cbmFoodType.Size = new System.Drawing.Size(121, 33);
             this.cbmFoodType.TabIndex = 6;
+            // 
+            // txtSerch
+            // 
+            this.txtSerch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSerch.Location = new System.Drawing.Point(8, 251);
+            this.txtSerch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSerch.Name = "txtSerch";
+            this.txtSerch.Size = new System.Drawing.Size(221, 35);
+            this.txtSerch.TabIndex = 5;
             // 
             // FrmCookBook
             // 
