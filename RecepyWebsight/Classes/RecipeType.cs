@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RecepyWebsight.Classes
 {
-    class Recepies
+    public class RecipeType
     {
+        public string Type { get; set; }
+
     }
 }
