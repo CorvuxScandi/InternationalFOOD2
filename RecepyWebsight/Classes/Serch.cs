@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RecepyWebsight.Classes
 {
-    class Serch
+    public class Serch
     {
     }
 }
