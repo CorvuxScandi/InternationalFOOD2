@@ -26,6 +26,19 @@ namespace RecepyWebsight.Classes
             }
         }
 
+        public static void AddRecpie(Recipe recipe)
+        {
 
+        }
+
+        public static void GetRecipe()
+        {
+
+        }
+
+        public static void UpdateRecipe()
+        {
+
+        }
     }
 }
