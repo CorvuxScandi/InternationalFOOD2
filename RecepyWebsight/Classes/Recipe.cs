@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RecepyWebsight.Classes
 {
-    public class Recipe:IMaintainable
+    public class Recipe
     {
         public string Name { get; set; }
         public int Id { get; set; }
@@ -16,26 +16,12 @@ namespace RecepyWebsight.Classes
 
         public Recipe(string name, int id, List<string> ingredients, List<string> instructions, RecipeType type)
         {
-            Name = name;
-            Id = id;
-            Ingredients = ingredients;
-            Instructions = instructions;
-            Type = type; 
+            this.Name = name;
+            this.Id = id;
+            this.Ingredients = ingredients;
+            this.Instructions = instructions;
+            this.Type = type; 
         }
 
-        public void Save()
-        {
-            
-        }
-
-        public void Update()
-        {
-           
-        }
-
-        public void Delete()
-        {
-            
-        }
     }
 }
