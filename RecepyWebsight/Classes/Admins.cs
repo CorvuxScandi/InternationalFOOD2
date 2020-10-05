@@ -19,7 +19,5 @@ namespace RecepyWebsight.Classes
             this.Password = password;
             this.Email = email;
         }
-
-
     }
 }
