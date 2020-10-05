@@ -15,6 +15,7 @@ namespace RecepyWebsight.Forms
         public LogIn()
         {
             InitializeComponent();
+            
         }
     }
 }
