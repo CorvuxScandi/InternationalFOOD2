@@ -52,6 +52,12 @@
     <Compile Include="Classes\Recipe.cs" />
     <Compile Include="Classes\RecipeType.cs" />
     <Compile Include="Classes\Serch.cs" />
+    <Compile Include="Forms\EditDeleteRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditDeleteRecipe.Designer.cs">
+      <DependentUpon>EditDeleteRecipe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,7 +70,6 @@
     <Compile Include="Forms\LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMaintainable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TextFiles\Errormessage\Resource1.Designer.cs">
@@ -72,6 +77,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\EditDeleteRecipe.resx">
+      <DependentUpon>EditDeleteRecipe.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
