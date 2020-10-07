@@ -116,23 +116,24 @@ namespace RecepyWebsight.Classes
             {
                 try
                 {
-                    using (StreamWriter writer = new StreamWriter(filePath, true))
+                    StreamWriter writer = new StreamWriter(filePath, true);
+
+                    writer.Write(recipe.Name);
+
+                    writer.Write(",");
+                    foreach (string ingredient in recipe.Ingredients)
                     {
-                        writer.Write(recipe.Name);
-
-                        foreach (string ingredient in recipe.Ingredients)
-                        {
-                            writer.Write(",-" + ingredient);
-                        }
-
-                        foreach (string instruction in recipe.Instructions)
-                        {
-                            writer.Write("," + instructionNumber + "." + instruction);
-                            instructionNumber++;
-                        }
-
-                        writer.Write("," + recipe.Type + "\n");
+                        writer.Write(ingredient + "-");
                     }
+
+                    writer.Write(",");
+                    foreach (string instruction in recipe.Instructions)
+                    {
+                        writer.Write(instruction + "-");
+                        instructionNumber++;
+                    }
+
+                    writer.Write("," + recipe.Type + "\n");
                 }
                 catch (Exception ex)
                 {
