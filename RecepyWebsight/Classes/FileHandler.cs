@@ -82,19 +82,66 @@ namespace RecepyWebsight.Classes
             return loginSuccessful;
         }
 
+        // Lägger ett "-" framför varje ingrediens och numrerar varje instruktion
         public static void AddRecpie(Recipe recipe)
         {
+            string filePath = @"..\..\TextFiles\Recepies.txt";
+            int instructionNumber = 1;
+            string line;
+            bool recpieExist = false;
 
-        }
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeCheck = line.Split(',');
 
-        public static void GetRecipe()
-        {
+                        if (recipeCheck[0] == recipe.Name)
+                        {
+                            recpieExist = true;
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
 
-        }
+            if (recpieExist)
+            {
+                // TODO: Felhantering - Ett recept med namnet existerar redan
+            }
+            else
+            {
+                try
+                {
+                    using (StreamWriter writer = new StreamWriter(filePath, true))
+                    {
+                        writer.Write(recipe.Name);
 
-        public static void UpdateRecipe()
-        {
+                        foreach (string ingredient in recipe.Ingredients)
+                        {
+                            writer.Write(",-" + ingredient);
+                        }
 
+                        foreach (string instruction in recipe.Instructions)
+                        {
+                            writer.Write("," + instructionNumber + "." + instruction);
+                            instructionNumber++;
+                        }
+
+                        writer.Write("," + recipe.Type + "\n");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // TODO: Exception
+                }
+            }
         }
     }
 }
