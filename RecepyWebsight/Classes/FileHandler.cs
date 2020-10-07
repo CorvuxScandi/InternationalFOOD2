@@ -13,19 +13,19 @@ namespace RecepyWebsight.Classes
 
             try
             {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        string[] adminCheck = line.Split(',');
+                StreamReader reader = new StreamReader(filePath);
 
-                        if (adminCheck[0] == admin.Name)
-                        {
-                            userExist = true;
-                            break;
-                        }
+                while((line = reader.ReadLine()) != null)
+                {
+                    string[] adminCheck = line.Split(',');
+
+                    if (adminCheck[0] == admin.Name)
+                    {
+                        userExist = true;
+                        break;
                     }
                 }
+
             }
             catch (Exception ex)
             {
@@ -40,10 +40,9 @@ namespace RecepyWebsight.Classes
             {
                 try
                 {
-                    using (StreamWriter writer = new StreamWriter(filePath, true))
-                    {
-                        writer.WriteLine(admin.Name + "," + admin.Password + "," + admin.Email);
-                    }
+                    StreamWriter writer = new StreamWriter(filePath, true);
+
+                     writer.WriteLine(admin.Name + "," + admin.Password + "," + admin.Email);
                 }
                 catch (Exception ex)
                 {
@@ -60,17 +59,16 @@ namespace RecepyWebsight.Classes
 
             try
             {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        string[] adminCheck = line.Split(',');
+                StreamReader reader = new StreamReader(filePath);
 
-                        if (adminCheck[0] == username && adminCheck[1] == password)
-                        {
-                            loginSuccessful = true;
-                            break;
-                        }
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] adminCheck = line.Split(',');
+
+                    if (adminCheck[0] == username && adminCheck[1] == password)
+                    {
+                        loginSuccessful = true;
+                        break;
                     }
                 }
             }
@@ -92,17 +90,16 @@ namespace RecepyWebsight.Classes
 
             try
             {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        string[] recipeCheck = line.Split(',');
+                StreamReader reader = new StreamReader(filePath);
 
-                        if (recipeCheck[0] == recipe.Name)
-                        {
-                            recpieExist = true;
-                            break;
-                        }
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] recipeCheck = line.Split(',');
+
+                    if (recipeCheck[0] == recipe.Name)
+                    {
+                        recpieExist = true;
+                        break;
                     }
                 }
             }
