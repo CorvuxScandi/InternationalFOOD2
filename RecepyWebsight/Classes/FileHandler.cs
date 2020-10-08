@@ -217,7 +217,7 @@ namespace RecepyWebsight.Classes
 
             if (recpieExist)
             {
-                MessageBox.Show("Ett recept med det namnet finns redan.")
+                MessageBox.Show("Ett recept med det namnet finns redan.");
             }
             else
             {
@@ -428,7 +428,7 @@ namespace RecepyWebsight.Classes
 
             if (recpieTypeExist)
             {
-                MessageBox.Show("En recepttype med det namnet finns redan.")
+                MessageBox.Show("En recepttype med det namnet finns redan.");
             }
             else
             {
