@@ -9,13 +9,17 @@ namespace RecepyWebsight.Classes
 {
     public class Admins
     {
-        public string Name { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
 
-        public Admins(string name, string password, string email)
+        public Admins(string firstname, string lastname, string username, string password, string email)
         {
-            this.Name = name;
+            this.Firstname = firstname;
+            this.Lastname = lastname;
+            this.Username = username;
             this.Password = password;
             this.Email = email;
         }
