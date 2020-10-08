@@ -96,6 +96,7 @@
             this.txtPassword.Location = new System.Drawing.Point(12, 79);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(149, 23);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);

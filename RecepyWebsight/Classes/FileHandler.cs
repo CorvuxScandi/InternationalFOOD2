@@ -1,13 +1,18 @@
-﻿using System;
+﻿using RecepyWebsight.TextFiles.Errormessage;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace RecepyWebsight.Classes
 {
     public static class FileHandler
     {
+
+        
+
         public static void AddAdmin(Admins admin)
         {
             string filePath = @"..\..\TextFiles\Admins.txt";
@@ -61,26 +66,29 @@ namespace RecepyWebsight.Classes
             string filePath = @"..\..\TextFiles\Admins.txt";
             string line;
             bool loginSuccessful = false;
-
+            List<Admins> admins = new List<Admins>();
             try
             {
                 using (StreamReader reader = new StreamReader(filePath))
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] adminCheck = line.Split(',');
-
-                        if (adminCheck[0] == username && adminCheck[1] == password)
-                        {
-                            loginSuccessful = true;
-                            break;
-                        }
+                        string[] adminC = line.Split(',');
+                        admins.Add(new Admins(adminC[0], adminC[1], adminC[2], adminC[3], adminC[4]));
                     }
+
                 }
+
+                loginSuccessful = admins.Any(a => a.Username == username && a.Password == password);
+
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+
+                error.LogException();
+
+                MessageBox.Show(ErrorMessages.Unknown_Error);
             }
 
             return loginSuccessful;

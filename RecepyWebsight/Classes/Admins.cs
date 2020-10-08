@@ -15,7 +15,7 @@ namespace RecepyWebsight.Classes
         public string Password { get; set; }
         public string Email { get; set; }
 
-        public Admins(string firstname, string lastname, string username, string password, string email)
+        public Admins (string firstname, string lastname, string username, string password, string email)
         {
             this.Firstname = firstname;
             this.Lastname = lastname;
