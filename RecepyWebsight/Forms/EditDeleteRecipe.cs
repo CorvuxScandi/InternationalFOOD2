@@ -73,14 +73,14 @@ namespace RecepyWebsight.Forms
             else
             {
                 string headLine = txtHeadline.Text;
-                //RecipeType recipeType = new RecipeType(cboRecipeType.SelectedItem.ToString());
+                RecipeType recipeType = new RecipeType(cboRecipeType.SelectedItem.ToString());
                 string type = cboRecipeType.SelectedItem.ToString();
                 string[] ingredientArray = txtIngredients.Lines;
                 string[] instructionsArray = txtInstructions.Lines;
                 List<string> ingredients = ingredientArray.ToList();
                 List<string> instructions = instructionsArray.ToList();
 
-                FileHandler.UpdateRecipe(headLine, ingredients, instructions, type);
+                FileHandler.UpdateRecipe(headLine, ingredients, instructions, recipeType);
             }
         }
 
