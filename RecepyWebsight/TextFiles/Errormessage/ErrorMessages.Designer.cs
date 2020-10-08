@@ -22,7 +22,7 @@ namespace RecepyWebsight.TextFiles.Errormessage {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ErrorMessages {
+    public class ErrorMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace RecepyWebsight.TextFiles.Errormessage {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("RecepyWebsight.TextFiles.Errormessage.ErrorMessages", typeof(ErrorMessages).Assembly);
@@ -51,7 +51,7 @@ namespace RecepyWebsight.TextFiles.Errormessage {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace RecepyWebsight.TextFiles.Errormessage {
         /// <summary>
         ///   Looks up a localized string similar to Det finns redan ett recept med samma namn.
         /// </summary>
-        internal static string Duplicate {
+        public static string Duplicate {
             get {
                 return ResourceManager.GetString("Duplicate", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace RecepyWebsight.TextFiles.Errormessage {
         /// <summary>
         ///   Looks up a localized string similar to Oups! Något okänt del hände. Försök igen..
         /// </summary>
-        internal static string Unknown_Error {
+        public static string Unknown_Error {
             get {
                 return ResourceManager.GetString("Unknown Error", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace RecepyWebsight.TextFiles.Errormessage {
         /// <summary>
         ///   Looks up a localized string similar to Fel lösenord eller användarnamn.
         /// </summary>
-        internal static string Wrong_login {
+        public static string Wrong_login {
             get {
                 return ResourceManager.GetString("Wrong login", resourceCulture);
             }

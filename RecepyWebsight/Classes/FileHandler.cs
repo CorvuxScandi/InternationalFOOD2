@@ -8,6 +8,9 @@ namespace RecepyWebsight.Classes
 {
     public static class FileHandler
     {
+
+        ErrorHandler error;
+
         public static void AddAdmin(Admins admin)
         {
             string filePath = @"..\..\TextFiles\Admins.txt";
@@ -80,7 +83,7 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                
             }
 
             return loginSuccessful;
