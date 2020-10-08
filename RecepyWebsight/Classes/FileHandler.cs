@@ -86,6 +86,97 @@ namespace RecepyWebsight.Classes
             return loginSuccessful;
         }
 
+        public static void UpdateAdmin(string firstname, string lastname, string username, string password, string email)
+        {
+
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\Admins.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeCheck = line.Split(',');
+
+                        if (recipeCheck[2] == username)
+                        {
+                            string admin = firstname + "," + lastname + "," + username + "," + password + "," + "," + email;
+
+                            updatedList.Add(admin);
+                        }
+                        else
+                        {
+                            updatedList.Add(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string admin in updatedList)
+                    {
+                        writer.WriteLine(admin);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
+
+        public static void RemoveAdmin(string adminName)
+        {
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\Admins.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] adminCheck = line.Split(',');
+
+                        if (adminCheck[2] != adminName)
+                        {
+                            updatedList.Add(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string admin in updatedList)
+                    {
+                        writer.WriteLine(admin);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
+
 
         public static void AddRecipe(Recipe recipe)
         {
