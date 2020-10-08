@@ -70,6 +70,15 @@ namespace RecepyWebsight.TextFiles.Errormessage {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Oups! Något okänt del hände. Försök igen..
+        /// </summary>
+        internal static string Unknown_Error {
+            get {
+                return ResourceManager.GetString("Unknown Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Fel lösenord eller användarnamn.
         /// </summary>
         internal static string Wrong_login {

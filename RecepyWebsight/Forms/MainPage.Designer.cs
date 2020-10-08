@@ -55,6 +55,7 @@
             this.cmdLogin.TabIndex = 1;
             this.cmdLogin.Text = "Logga In";
             this.cmdLogin.UseVisualStyleBackColor = true;
+            this.cmdLogin.Click += new System.EventHandler(this.cmdLogin_Click);
             // 
             // cmdEdit
             // 
@@ -92,7 +93,7 @@
             // ImgFood
             // 
             this.ImgFood.Location = new System.Drawing.Point(7, 12);
-            this.ImgFood.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ImgFood.Margin = new System.Windows.Forms.Padding(2);
             this.ImgFood.Name = "ImgFood";
             this.ImgFood.Size = new System.Drawing.Size(147, 118);
             this.ImgFood.TabIndex = 2;
@@ -107,7 +108,7 @@
             this.lstRecepie.HorizontalScrollbar = true;
             this.lstRecepie.ItemHeight = 20;
             this.lstRecepie.Location = new System.Drawing.Point(159, 15);
-            this.lstRecepie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lstRecepie.Margin = new System.Windows.Forms.Padding(2);
             this.lstRecepie.Name = "lstRecepie";
             this.lstRecepie.Size = new System.Drawing.Size(288, 354);
             this.lstRecepie.TabIndex = 4;
@@ -123,9 +124,9 @@
             this.groupBox1.Controls.Add(this.ImgFood);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox1.Location = new System.Drawing.Point(174, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(449, 371);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
@@ -161,7 +162,7 @@
             this.Controls.Add(this.cmdLogin);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cmdEdit);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmCookBook";
             this.Text = "International FOOD AB";
             ((System.ComponentModel.ISupportInitialize)(this.numRecepie)).EndInit();

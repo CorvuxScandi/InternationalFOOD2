@@ -120,6 +120,9 @@
   <data name="Duplicate" xml:space="preserve">
     <value>Det finns redan ett recept med samma namn</value>
   </data>
+  <data name="Unknown Error" xml:space="preserve">
+    <value>Oups! Något okänt del hände. Försök igen.</value>
+  </data>
   <data name="Wrong login" xml:space="preserve">
     <value>Fel lösenord eller användarnamn</value>
   </data>

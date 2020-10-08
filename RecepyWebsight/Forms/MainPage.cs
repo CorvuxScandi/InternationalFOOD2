@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RecepyWebsight.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,6 +35,23 @@ namespace RecepyWebsight
 
 
 
+        }
+
+        private void cmdLogin_Click(object sender, EventArgs e)
+        {
+            using (LogIn logIn = new LogIn(this))
+            {
+                logIn.Show();
+            } 
+
+            
+
+        }
+
+        public void ShowEdit()
+        {
+
+            cmdEdit.Visible = true;
         }
     }
 }
