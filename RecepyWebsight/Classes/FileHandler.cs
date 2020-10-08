@@ -86,6 +86,97 @@ namespace RecepyWebsight.Classes
             return loginSuccessful;
         }
 
+        public static void UpdateAdmin(string firstname, string lastname, string username, string password, string email)
+        {
+
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\Admins.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeCheck = line.Split(',');
+
+                        if (recipeCheck[2] == username)
+                        {
+                            string admin = firstname + "," + lastname + "," + username + "," + password + "," + "," + email;
+
+                            updatedList.Add(admin);
+                        }
+                        else
+                        {
+                            updatedList.Add(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string admin in updatedList)
+                    {
+                        writer.WriteLine(admin);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
+
+        public static void RemoveAdmin(string adminName)
+        {
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\Admins.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] adminCheck = line.Split(',');
+
+                        if (adminCheck[2] != adminName)
+                        {
+                            updatedList.Add(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string admin in updatedList)
+                    {
+                        writer.WriteLine(admin);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
+
 
         public static void AddRecipe(Recipe recipe)
         {
@@ -273,6 +364,191 @@ namespace RecepyWebsight.Classes
                     foreach (string recipe in updatedList)
                     {
                         writer.WriteLine(recipe);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
+
+        
+        public static void AddRecipeType(RecipeType recipeType)
+        {
+            StringBuilder sbRecipeType = new StringBuilder();
+            string filePath = @"..\..\TextFiles\RecipeTypes.txt";
+            string line;
+            bool recpieTypeExist = false;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeTypeArray = line.Split(',');
+
+                        foreach(string type in recipeTypeArray)
+                        {
+                            if(type == recipeType.Type)
+                            {
+                                recpieTypeExist = true;
+                                break;
+                            }
+                            else
+                            {
+                                sbRecipeType.Append(type + ",");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            if (recpieTypeExist)
+            {
+                // TODO: Felhantering - En recept typ med det namnet existerar redan
+            }
+            else
+            {
+                try
+                {
+                    sbRecipeType.Append(recipeType.Type);
+
+                    using (StreamWriter writer = new StreamWriter(filePath, true))
+                    {
+                        writer.Write(sbRecipeType.ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // TODO: Exception
+                }
+            }
+        }
+
+        public static List<RecipeType> GetRecipeType()
+        {
+            List<RecipeType> recipesTypes = new List<RecipeType>();
+            string filePath = @"..\..\TextFiles\RecipeTypes.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeTypeArray = line.Split(',');
+
+                        foreach (string recipeType in recipeTypeArray)
+                        {
+                            RecipeType type = new RecipeType(recipeTypeArray[0]);
+
+                            recipesTypes.Add(type);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            return recipesTypes;
+        }
+
+        public static void UpdateRecipeType(string recipeType)
+        {
+            StringBuilder sbRecipeType = new StringBuilder();
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\RecipeTypes.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeTypeArray = line.Split(',');
+
+                        foreach(string type in recipeTypeArray)
+                        {
+                            if(type == recipeType)
+                            {
+                                sbRecipeType.Append(recipeType + ",");
+                            }
+                            else
+                            {
+                                sbRecipeType.Append(type + ",");
+                            }                            
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string type in updatedList)
+                    {
+                        writer.WriteLine(type);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
+
+        public static void RemoveRecipeType(string recipeType)
+        {
+            StringBuilder sbRecipeType = new StringBuilder();
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\RecipeTypes.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeTypeArray = line.Split(',');
+
+                        foreach (string type in recipeTypeArray)
+                        {
+                            if (type != recipeType)
+                            {
+                                sbRecipeType.Append(type + ",");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string type in updatedList)
+                    {
+                        writer.WriteLine(type);
                     }
                 }
             }
