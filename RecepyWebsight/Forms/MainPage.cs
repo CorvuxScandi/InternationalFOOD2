@@ -1,4 +1,5 @@
-﻿using RecepyWebsight.Forms;
+﻿using RecepyWebsight.Classes;
+using RecepyWebsight.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,14 @@ namespace RecepyWebsight
 {
     public partial class FrmCookBook : Form
     {
+        
+
         public FrmCookBook()
         {
             InitializeComponent();
+            ToListbox();
+
+
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -25,9 +31,11 @@ namespace RecepyWebsight
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) //lstRecipe
         {
-            int currentRecipeIndex = int.Parse(numRecepie.Value.ToString());
+            // int currentRecipeIndex = int.Parse(numRecepie.Value.ToString());
 
-            ImgFood.Image = imageList1.Images[currentRecipeIndex - 1];
+            
+
+            numRecepie.Value = lstRecepie.SelectedIndex;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
@@ -44,14 +52,40 @@ namespace RecepyWebsight
                 logIn.Show();
 
         }
-    
-
-       
 
         public void ShowEdit()
         {
-
             cmdEdit.Visible = true;
+        }
+
+        private void ToListbox()
+        {
+            List<Recipe> recipes = FileHandler.GetRecipes();
+
+            foreach (var recipe in recipes)
+            {
+                lstRecepie.Items.Add(recipe.Name);
+                
+                foreach (var item in recipe.Ingredients)
+                {
+                    lstRecepie.Items.Add(item);
+                }
+                foreach (var item in recipe.Instructions)
+                {
+                    lstRecepie.Items.Add(item);
+                }
+
+                lstRecepie.Items.Add(" ");
+            }
+
+        }
+
+        private void GetImage()
+        {
+            List<Recipe> recipes = FileHandler.GetRecipes();
+            int targetRecipeIndex = recipes.IndexOf((Recipe)recipes.Where(r => r.Name == lstRecepie.SelectedItem.ToString()));
+
+            ImgFood.Image = imageList1.Images[ ];
         }
     }
 }
