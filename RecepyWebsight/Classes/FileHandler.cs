@@ -160,7 +160,7 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeArray = line.Split(',');
+                        string[] recipeArray = line.Split('#');
 
                         RecipeType type = new RecipeType(recipeArray[3]);
                         Recipe recipe = new Recipe(recipeArray[0], recipeArray[1].Split('-').ToList(), recipeArray[2].Split('-').ToList(), type);

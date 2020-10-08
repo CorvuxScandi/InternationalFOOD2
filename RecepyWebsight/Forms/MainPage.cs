@@ -1,4 +1,5 @@
-﻿using RecepyWebsight.Forms;
+﻿using RecepyWebsight.Classes;
+using RecepyWebsight.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,14 @@ namespace RecepyWebsight
 {
     public partial class FrmCookBook : Form
     {
+        
+
         public FrmCookBook()
         {
             InitializeComponent();
+            
+
+
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,14 +50,23 @@ namespace RecepyWebsight
                 logIn.Show();
 
         }
-    
-
-       
 
         public void ShowEdit()
         {
-
             cmdEdit.Visible = true;
+        }
+
+        private void ToListbox()
+        {
+            List<Recipe> recipes = FileHandler.GetRecipes();
+
+            foreach (var recipe in recipes)
+            {
+
+
+
+            }
+
         }
     }
 }
