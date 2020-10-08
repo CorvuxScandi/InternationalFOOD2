@@ -14,14 +14,13 @@ namespace RecepyWebsight
 {
     public partial class FrmCookBook : Form
     {
-        
+        List<Recipe> recipes = FileHandler.GetRecipes();
 
         public FrmCookBook()
         {
             InitializeComponent();
-            ToListbox();
-
-
+            numRecepie.Value = 1;
+            ToListbox(recipes[Convert.ToInt32(numRecepie.Value - 1)]);
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -31,18 +30,12 @@ namespace RecepyWebsight
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) //lstRecipe
         {
-            // int currentRecipeIndex = int.Parse(numRecepie.Value.ToString());
-
             
-
-            numRecepie.Value = lstRecepie.SelectedIndex;
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
-
-
+            ToListbox(recipes[Convert.ToInt32(numRecepie.Value - 1)]);
         }
 
         private void cmdLogin_Click(object sender, EventArgs e)
@@ -58,34 +51,39 @@ namespace RecepyWebsight
             cmdEdit.Visible = true;
         }
 
-        private void ToListbox()
+        private void ToListbox(Recipe recipe)
         {
-            List<Recipe> recipes = FileHandler.GetRecipes();
-
-            foreach (var recipe in recipes)
-            {
                 lstRecepie.Items.Add(recipe.Name);
                 
-                foreach (var item in recipe.Ingredients)
+                foreach (var ingredient in recipe.Ingredients)
                 {
-                    lstRecepie.Items.Add(item);
+                    lstRecepie.Items.Add(ingredient);
                 }
-                foreach (var item in recipe.Instructions)
+                foreach (var row in recipe.Instructions)
                 {
-                    lstRecepie.Items.Add(item);
+                    lstRecepie.Items.Add(row);
                 }
-
-                lstRecepie.Items.Add(" ");
-            }
 
         }
 
+        
+
         private void GetImage()
         {
-            List<Recipe> recipes = FileHandler.GetRecipes();
+           
             int targetRecipeIndex = recipes.IndexOf((Recipe)recipes.Where(r => r.Name == lstRecepie.SelectedItem.ToString()));
 
-           // ImgFood.Image = imageList1.Images[ ];
+            ImgFood.Image = imageList1.Images[Convert.ToInt32(numRecepie.Value - 1)];
+        }
+
+        private void cmdSerch_Click(object sender, EventArgs e)
+        {
+            Serch search = new Serch();
+
+            ToListbox(search.Search(txtSerch.Text, cbmFoodType.SelectedItem.ToString()).First());
+
+
+
         }
     }
 }

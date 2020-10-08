@@ -81,6 +81,7 @@
             this.cmdSerch.TabIndex = 5;
             this.cmdSerch.Text = "Sök";
             this.cmdSerch.UseVisualStyleBackColor = true;
+            this.cmdSerch.Click += new System.EventHandler(this.cmdSerch_Click);
             // 
             // numRecepie
             // 
@@ -154,21 +155,21 @@
             // 
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "CeacarSallad");
-            this.imageList1.Images.SetKeyName(1, "Chokladbollar.jpg");
-            this.imageList1.Images.SetKeyName(2, "Fiskgryta.jpg");
-            this.imageList1.Images.SetKeyName(3, "FläskfilePasta.jpg");
+            this.imageList1.Images.SetKeyName(0, "Sockerkaka");
+            this.imageList1.Images.SetKeyName(1, "Kebabb.jpg");
+            this.imageList1.Images.SetKeyName(2, "Kladdkaka.jpg");
+            this.imageList1.Images.SetKeyName(3, "Pannkakor.jpg");
             this.imageList1.Images.SetKeyName(4, "GrekiskSallad.jpg");
-            this.imageList1.Images.SetKeyName(5, "Sockerkaka");
-            this.imageList1.Images.SetKeyName(6, "ItalienskBondsoppa.jpg");
-            this.imageList1.Images.SetKeyName(7, "Kebabb.jpg");
-            this.imageList1.Images.SetKeyName(8, "Kladdkaka.jpg");
-            this.imageList1.Images.SetKeyName(9, "KryddigSoppa.jpg");
-            this.imageList1.Images.SetKeyName(10, "Pannkakor.jpg");
-            this.imageList1.Images.SetKeyName(11, "PotatisPurjolökSoppa.jpg");
+            this.imageList1.Images.SetKeyName(5, "Fiskgryta.jpg");
+            this.imageList1.Images.SetKeyName(6, "KryddigSoppa.jpg");
+            this.imageList1.Images.SetKeyName(7, "PotatisPurjolökSoppa.jpg");
+            this.imageList1.Images.SetKeyName(8, "CeacarSallad");
+            this.imageList1.Images.SetKeyName(9, "FläskfilePasta.jpg");
+            this.imageList1.Images.SetKeyName(10, "Chokladbollar.jpg");
+            this.imageList1.Images.SetKeyName(11, "Yakiniku.jpg");
             this.imageList1.Images.SetKeyName(12, "StektLax.jpg");
             this.imageList1.Images.SetKeyName(13, "Thaigryta.jpg");
-            this.imageList1.Images.SetKeyName(14, "Yakiniku.jpg");
+            this.imageList1.Images.SetKeyName(14, "ItalienskBondsoppa.jpg");
             // 
             // FrmCookBook
             // 
