@@ -13,16 +13,17 @@ namespace RecepyWebsight.Classes
 
             try
             {
-                StreamReader reader = new StreamReader(filePath);
-
-                while((line = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string[] adminCheck = line.Split(',');
-
-                    if (adminCheck[0] == admin.Name)
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        userExist = true;
-                        break;
+                        string[] adminCheck = line.Split(',');
+
+                        if (adminCheck[2] == admin.Username)
+                        {
+                            userExist = true;
+                            break;
+                        }
                     }
                 }
 
@@ -40,9 +41,10 @@ namespace RecepyWebsight.Classes
             {
                 try
                 {
-                    StreamWriter writer = new StreamWriter(filePath, true);
-
-                     writer.WriteLine(admin.Name + "," + admin.Password + "," + admin.Email);
+                    using(StreamWriter writer = new StreamWriter(filePath, true))
+                    {
+                        writer.WriteLine(admin.Firstname + "," + admin.Lastname + "," + admin.Username + "," + admin.Password + "," + admin.Email);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -59,16 +61,17 @@ namespace RecepyWebsight.Classes
 
             try
             {
-                StreamReader reader = new StreamReader(filePath);
-
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string[] adminCheck = line.Split(',');
-
-                    if (adminCheck[0] == username && adminCheck[1] == password)
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        loginSuccessful = true;
-                        break;
+                        string[] adminCheck = line.Split(',');
+
+                        if (adminCheck[0] == username && adminCheck[1] == password)
+                        {
+                            loginSuccessful = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -80,8 +83,7 @@ namespace RecepyWebsight.Classes
             return loginSuccessful;
         }
 
-        // Lägger ett "-" framför varje ingrediens och numrerar varje instruktion
-        public static void AddRecpie(Recipe recipe)
+        public static void AddRecipe(Recipe recipe)
         {
             string filePath = @"..\..\TextFiles\Recepies.txt";
             int instructionNumber = 1;
@@ -90,16 +92,17 @@ namespace RecepyWebsight.Classes
 
             try
             {
-                StreamReader reader = new StreamReader(filePath);
-
-                while ((line = reader.ReadLine()) != null)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string[] recipeCheck = line.Split(',');
-
-                    if (recipeCheck[0] == recipe.Name)
+                    while ((line = reader.ReadLine()) != null)
                     {
-                        recpieExist = true;
-                        break;
+                        string[] recipeCheck = line.Split(',');
+
+                        if (recipeCheck[0] == recipe.Name)
+                        {
+                            recpieExist = true;
+                            break;
+                        }
                     }
                 }
             }
@@ -116,24 +119,25 @@ namespace RecepyWebsight.Classes
             {
                 try
                 {
-                    StreamWriter writer = new StreamWriter(filePath, true);
-
-                    writer.Write(recipe.Name);
-
-                    writer.Write(",");
-                    foreach (string ingredient in recipe.Ingredients)
+                    using (StreamWriter writer = new StreamWriter(filePath, true))
                     {
-                        writer.Write(ingredient + "-");
-                    }
+                        writer.Write(recipe.Name);
 
-                    writer.Write(",");
-                    foreach (string instruction in recipe.Instructions)
-                    {
-                        writer.Write(instruction + "-");
-                        instructionNumber++;
-                    }
+                        writer.Write(",");
+                        foreach (string ingredient in recipe.Ingredients)
+                        {
+                            writer.Write(ingredient + "-");
+                        }
 
-                    writer.Write("," + recipe.Type + "\n");
+                        writer.Write(",");
+                        foreach (string instruction in recipe.Instructions)
+                        {
+                            writer.Write(instruction + "-");
+                            instructionNumber++;
+                        }
+
+                        writer.Write("," + recipe.Type + "\n");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -141,5 +145,8 @@ namespace RecepyWebsight.Classes
                 }
             }
         }
+
+
+
     }
 }
