@@ -21,20 +21,18 @@ namespace RecepyWebsight.Forms
         private void EditDeleteRecipe_Load(object sender, EventArgs e)
         {
             //Tillgängliga recepttyper läggs till i combobox
-            //List<RecipeType> recipeTypes = FileHandler.Lägg till metodnamn();
+            List<RecipeType> recipeTypes = FileHandler.GetRecipeType();
 
-            //foreach(var item in recipeTypes)
-            //{
-            //    cboRecipeType.Items.Add(item.Type);
-            //}
-
-
+            foreach (var item in recipeTypes)
+            {
+                cboRecipeType.Items.Add(item.Type);
+            }
         }
 
         private void cmdAddRecipeType_Click(object sender, EventArgs e)
         {
             RecipeType recipeType = new RecipeType(txtAddRecipeType.Text);
-            //Filehandler.AddRecipeType(recipeType);
+            FileHandler.AddRecipeType(recipeType);
             cboRecipeType.Items.Add(recipeType.Type); //Lägger till ny recepttyp i combobox
         }
 
