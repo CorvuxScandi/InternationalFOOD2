@@ -70,6 +70,7 @@
             this.cmdEdit.Text = "Redigera Recept";
             this.cmdEdit.UseVisualStyleBackColor = true;
             this.cmdEdit.Visible = false;
+            this.cmdEdit.Click += new System.EventHandler(this.cmdEdit_Click);
             // 
             // cmdSerch
             // 
@@ -87,9 +88,24 @@
             // 
             this.numRecepie.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numRecepie.Location = new System.Drawing.Point(5, 137);
+            this.numRecepie.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numRecepie.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numRecepie.Name = "numRecepie";
             this.numRecepie.Size = new System.Drawing.Size(80, 23);
             this.numRecepie.TabIndex = 1;
+            this.numRecepie.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numRecepie.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // ImgFood

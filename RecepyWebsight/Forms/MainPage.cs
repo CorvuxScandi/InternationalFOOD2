@@ -18,8 +18,10 @@ namespace RecepyWebsight
 
         public FrmCookBook()
         {
+            
+           
             InitializeComponent();
-            numRecepie.Value = 1;
+            //numRecepie.Value = 1;
             ToListbox(recipes[Convert.ToInt32(numRecepie.Value - 1)]);
         }
 
@@ -35,7 +37,11 @@ namespace RecepyWebsight
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+            numRecepie.Maximum = recipes.Count;
+            
             ToListbox(recipes[Convert.ToInt32(numRecepie.Value - 1)]);
+
+           
         }
 
         private void cmdLogin_Click(object sender, EventArgs e)
@@ -53,7 +59,9 @@ namespace RecepyWebsight
 
         private void ToListbox(Recipe recipe)
         {
-                lstRecepie.Items.Add(recipe.Name);
+            lstRecepie.Items.Clear();
+
+            lstRecepie.Items.Add(recipe.Name);
                 
                 foreach (var ingredient in recipe.Ingredients)
                 {
@@ -65,7 +73,25 @@ namespace RecepyWebsight
                 }
 
         }
+        private void SearchToListbox(List<Recipe> recipes)
+        {
+            lstRecepie.Items.Clear();
 
+            foreach (var recipe in recipes)
+            {
+
+                lstRecepie.Items.Add(recipe.Name);
+
+                foreach (var ingredient in recipe.Ingredients)
+                {
+                    lstRecepie.Items.Add(ingredient);
+                }
+                foreach (var row in recipe.Instructions)
+                {
+                    lstRecepie.Items.Add(row);
+                }
+            }
+        }
         
 
         private void GetImage()
@@ -80,10 +106,26 @@ namespace RecepyWebsight
         {
             Serch search = new Serch();
 
-            ToListbox(search.Search(txtSerch.Text, cbmFoodType.SelectedItem.ToString()).First());
+            if(cbmFoodType.SelectedItem == null)
+            {
+                SearchToListbox(search.Search("", txtSerch.Text));
+            }
+            else
+            {
+                SearchToListbox(search.Search(txtSerch.Text, cbmFoodType.SelectedItem.ToString()));
+            }
+
+            
 
 
 
+        }
+
+        private void cmdEdit_Click(object sender, EventArgs e)
+        {
+            EditDeleteRecipe edit = new EditDeleteRecipe();
+
+            edit.Show();
         }
     }
 }
