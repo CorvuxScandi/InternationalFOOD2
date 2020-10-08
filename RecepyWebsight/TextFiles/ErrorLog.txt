@@ -14,3 +14,5 @@ Filnamn: C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsi
    vid System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
    vid System.IO.StreamReader..ctor(String path)
    vid RecepyWebsight.Classes.FileHandler.Login(String username, String password) i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 72
+[2020-10-08 13:17:52] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\karla\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 267

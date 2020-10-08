@@ -10,9 +10,6 @@ namespace RecepyWebsight.Classes
 {
     public static class FileHandler
     {
-
-        
-
         public static void AddAdmin(Admins admin)
         {
             string filePath = @"..\..\TextFiles\Admins.txt";
@@ -38,12 +35,13 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             if (userExist)
             {
-                // TODO: Exception [En användare med det namnet existerar redan]
+                MessageBox.Show("En användare med det användarnamnt finns redan");
             }
             else
             {
@@ -56,7 +54,9 @@ namespace RecepyWebsight.Classes
                 }
                 catch (Exception ex)
                 {
-                    // TODO: Exception
+                    ErrorHandler error = new ErrorHandler(ex);
+
+                    error.LogException();
                 }
             }
         }
@@ -85,10 +85,7 @@ namespace RecepyWebsight.Classes
             catch (Exception ex)
             {
                 ErrorHandler error = new ErrorHandler(ex);
-
                 error.LogException();
-
-                MessageBox.Show(ErrorMessages.Unknown_Error);
             }
 
             return loginSuccessful;
@@ -124,7 +121,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -139,7 +137,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -166,7 +165,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -181,7 +181,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -198,7 +199,7 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeCheck = line.Split(',');
+                        string[] recipeCheck = line.Split('#');
 
                         if (recipeCheck[0] == recipe.Name)
                         {
@@ -210,12 +211,13 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             if (recpieExist)
             {
-                // TODO: Felhantering - Ett recept med namnet existerar redan
+                MessageBox.Show("Ett recept med det namnet finns redan.");
             }
             else
             {
@@ -225,24 +227,25 @@ namespace RecepyWebsight.Classes
                     {
                         writer.Write(recipe.Name);
 
-                        writer.Write(",");
+                        writer.Write("#");
                         foreach (string ingredient in recipe.Ingredients)
                         {
                             writer.Write(ingredient + "-");
                         }
 
-                        writer.Write(",");
+                        writer.Write("#");
                         foreach (string instruction in recipe.Instructions)
                         {
                             writer.Write(instruction + "-");
                         }
 
-                        writer.Write("," + recipe.Type + "\n");
+                        writer.Write("#" + recipe.Type + "\n");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // TODO: Exception
+                    ErrorHandler error = new ErrorHandler(ex);
+                    error.LogException();
                 }
             }
         }
@@ -270,13 +273,14 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             return recipes;
         }
 
-        public static void UpdateRecipe(string headline, List<string> ingredients, List<string> instructions, string type)
+        public static void UpdateRecipe(string headline, List<string> ingredients, List<string> instructions, RecipeType type)
         {
             StringBuilder sb = new StringBuilder();
             List<string> updatedList = new List<string>();
@@ -289,25 +293,25 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeCheck = line.Split(',');
+                        string[] recipeCheck = line.Split('#');
 
                         if (recipeCheck[0] == headline)
                         {
                             sb.Append(headline);
 
-                            sb.Append(",");
+                            sb.Append("#");
                             foreach(string ingredient in ingredients)
                             {
                                 sb.Append(ingredient + "-");
                             }
 
-                            sb.Append(",");
+                            sb.Append("#");
                             foreach(string instruction in instructions)
                             {
                                 sb.Append(instruction + "-");
                             }
 
-                            sb.AppendLine(type);
+                            sb.AppendLine(type.Type);
 
                             updatedList.Add(sb.ToString());
                         }
@@ -320,7 +324,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -335,7 +340,8 @@ namespace RecepyWebsight.Classes
             }
             catch(Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -351,7 +357,7 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeCheck = line.Split(',');
+                        string[] recipeCheck = line.Split('#');
 
                         if (recipeCheck[0] != headline)
                         {
@@ -362,7 +368,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -377,7 +384,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -414,12 +422,13 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             if (recpieTypeExist)
             {
-                // TODO: Felhantering - En recept typ med det namnet existerar redan
+                MessageBox.Show("En recepttype med det namnet finns redan.");
             }
             else
             {
@@ -434,7 +443,8 @@ namespace RecepyWebsight.Classes
                 }
                 catch (Exception ex)
                 {
-                    // TODO: Exception
+                    ErrorHandler error = new ErrorHandler(ex);
+                    error.LogException();
                 }
             }
         }
@@ -464,7 +474,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             return recipesTypes;
@@ -501,7 +512,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -516,7 +528,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -547,7 +560,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -562,7 +576,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
     }
