@@ -35,12 +35,13 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             if (userExist)
             {
-                // TODO: Exception [En användare med det namnet existerar redan]
+                // TODO: Felhantering - En användare med det namnet existerar redan
             }
             else
             {
@@ -53,7 +54,9 @@ namespace RecepyWebsight.Classes
                 }
                 catch (Exception ex)
                 {
-                    // TODO: Exception
+                    ErrorHandler error = new ErrorHandler(ex);
+
+                    error.LogException();
                 }
             }
         }
@@ -82,7 +85,6 @@ namespace RecepyWebsight.Classes
             catch (Exception ex)
             {
                 ErrorHandler error = new ErrorHandler(ex);
-
                 error.LogException();
             }
 
@@ -119,7 +121,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -134,7 +137,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -161,7 +165,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -176,7 +181,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -205,7 +211,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             if (recpieExist)
@@ -237,7 +244,8 @@ namespace RecepyWebsight.Classes
                 }
                 catch (Exception ex)
                 {
-                    // TODO: Exception
+                    ErrorHandler error = new ErrorHandler(ex);
+                    error.LogException();
                 }
             }
         }
@@ -265,7 +273,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             return recipes;
@@ -315,7 +324,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -330,7 +340,8 @@ namespace RecepyWebsight.Classes
             }
             catch(Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -357,7 +368,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -372,7 +384,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -409,7 +422,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             if (recpieTypeExist)
@@ -429,7 +443,8 @@ namespace RecepyWebsight.Classes
                 }
                 catch (Exception ex)
                 {
-                    // TODO: Exception
+                    ErrorHandler error = new ErrorHandler(ex);
+                    error.LogException();
                 }
             }
         }
@@ -459,7 +474,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             return recipesTypes;
@@ -496,7 +512,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -511,7 +528,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
 
@@ -542,7 +560,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
 
             try
@@ -557,7 +576,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
     }

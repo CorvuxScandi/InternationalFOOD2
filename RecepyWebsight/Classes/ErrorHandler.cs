@@ -28,7 +28,8 @@ namespace RecepyWebsight.Classes
             }
             catch (Exception ex)
             {
-                // TODO: Exception
+                ErrorHandler error = new ErrorHandler(ex);
+                error.LogException();
             }
         }
     }
