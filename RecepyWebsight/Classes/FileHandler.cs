@@ -83,8 +83,7 @@ namespace RecepyWebsight.Classes
             return loginSuccessful;
         }
 
-        // Lägger ett "-" framför varje ingrediens och numrerar varje instruktion
-        public static void AddRecpie(Recipe recipe)
+        public static void AddRecipe(Recipe recipe)
         {
             string filePath = @"..\..\TextFiles\Recepies.txt";
             int instructionNumber = 1;
@@ -146,5 +145,8 @@ namespace RecepyWebsight.Classes
                 }
             }
         }
+
+
+
     }
 }
