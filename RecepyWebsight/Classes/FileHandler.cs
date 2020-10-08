@@ -10,9 +10,6 @@ namespace RecepyWebsight.Classes
 {
     public static class FileHandler
     {
-
-        
-
         public static void AddAdmin(Admins admin)
         {
             string filePath = @"..\..\TextFiles\Admins.txt";
@@ -87,8 +84,6 @@ namespace RecepyWebsight.Classes
                 ErrorHandler error = new ErrorHandler(ex);
 
                 error.LogException();
-
-                MessageBox.Show(ErrorMessages.Unknown_Error);
             }
 
             return loginSuccessful;
@@ -276,7 +271,7 @@ namespace RecepyWebsight.Classes
             return recipes;
         }
 
-        public static void UpdateRecipe(string headline, List<string> ingredients, List<string> instructions, string type)
+        public static void UpdateRecipe(string headline, List<string> ingredients, List<string> instructions, RecipeType type)
         {
             StringBuilder sb = new StringBuilder();
             List<string> updatedList = new List<string>();
@@ -307,7 +302,7 @@ namespace RecepyWebsight.Classes
                                 sb.Append(instruction + "-");
                             }
 
-                            sb.AppendLine(type);
+                            sb.AppendLine(type.Type);
 
                             updatedList.Add(sb.ToString());
                         }
