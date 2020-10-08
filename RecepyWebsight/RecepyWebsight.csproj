@@ -117,6 +117,7 @@
     <Content Include="TextFiles\Admins.txt" />
     <Content Include="TextFiles\ErrorLog.txt" />
     <Content Include="TextFiles\Recepies.txt" />
+    <Content Include="TextFiles\RecipeTypes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
