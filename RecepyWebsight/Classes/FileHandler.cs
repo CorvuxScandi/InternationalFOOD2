@@ -436,7 +436,7 @@ namespace RecepyWebsight.Classes
                 {
                     sbRecipeType.Append(recipeType.Type);
 
-                    using (StreamWriter writer = new StreamWriter(filePath, true))
+                    using (StreamWriter writer = new StreamWriter(filePath))
                     {
                         writer.Write(sbRecipeType.ToString());
                     }
