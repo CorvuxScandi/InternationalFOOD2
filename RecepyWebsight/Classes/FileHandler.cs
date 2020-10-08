@@ -41,7 +41,7 @@ namespace RecepyWebsight.Classes
 
             if (userExist)
             {
-                // TODO: Felhantering - En användare med det namnet existerar redan
+                MessageBox.Show("En användare med det användarnamnt finns redan");
             }
             else
             {
@@ -217,7 +217,7 @@ namespace RecepyWebsight.Classes
 
             if (recpieExist)
             {
-                // TODO: Felhantering - Ett recept med namnet existerar redan
+                MessageBox.Show("Ett recept med det namnet finns redan.")
             }
             else
             {
@@ -428,7 +428,7 @@ namespace RecepyWebsight.Classes
 
             if (recpieTypeExist)
             {
-                // TODO: Felhantering - En recept typ med det namnet existerar redan
+                MessageBox.Show("En recepttype med det namnet finns redan.")
             }
             else
             {
