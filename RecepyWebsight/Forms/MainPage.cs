@@ -18,7 +18,7 @@ namespace RecepyWebsight
 
         public FrmCookBook()
         {
-            
+
            
             InitializeComponent();
             //numRecepie.Value = 1;
@@ -114,11 +114,6 @@ namespace RecepyWebsight
             {
                 SearchToListbox(search.Search(txtSerch.Text, cbmFoodType.SelectedItem.ToString()));
             }
-
-            
-
-
-
         }
 
         private void cmdEdit_Click(object sender, EventArgs e)
@@ -126,6 +121,20 @@ namespace RecepyWebsight
             EditDeleteRecipe edit = new EditDeleteRecipe();
 
             edit.Show();
+        }
+
+        private void GetTypes()
+        {
+            cbmFoodType.Items.Clear();
+            foreach (var item in FileHandler.GetRecipeType())
+            {
+                cbmFoodType.Items.Add(item.Type);
+            }
+        }
+
+        private void cbmFoodType_Click(object sender, EventArgs e)
+        {
+            GetTypes();
         }
     }
 }

@@ -50,3 +50,19 @@ Filnamn: C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsi
    vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 267
 [2020-10-08 14:03:23] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
    vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 267
+[2020-10-08 15:17:28] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:21:15] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:22:04] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:22:21] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:22:48] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:23:00] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:23:16] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268
+[2020-10-08 15:23:43] System.IndexOutOfRangeException: Indexet låg utanför gränserna för matrisen.
+   vid RecepyWebsight.Classes.FileHandler.GetRecipes() i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 268

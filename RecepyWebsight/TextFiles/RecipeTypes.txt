@@ -1,5 +1,1 @@
-﻿Kött
-Fisk
-Sallader
-Soppor
-Desserter/Kakor
+Kött,Fisk,Sallader,Soppor,Desserter/Kakor,Sås,Såser,Vegitariskt

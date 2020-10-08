@@ -158,6 +158,7 @@
             this.cbmFoodType.Name = "cbmFoodType";
             this.cbmFoodType.Size = new System.Drawing.Size(82, 24);
             this.cbmFoodType.TabIndex = 6;
+            this.cbmFoodType.Click += new System.EventHandler(this.cbmFoodType_Click);
             // 
             // txtSerch
             // 

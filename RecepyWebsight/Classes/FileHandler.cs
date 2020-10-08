@@ -312,7 +312,7 @@ namespace RecepyWebsight.Classes
                                 sb.Append(instruction + "-");
                             }
 
-                            sb.AppendLine(type.Type);
+                            sb.Append(type.Type);
 
                             updatedList.Add(sb.ToString());
                         }
@@ -466,7 +466,7 @@ namespace RecepyWebsight.Classes
 
                         foreach (string recipeType in recipeTypeArray)
                         {
-                            RecipeType type = new RecipeType(recipeTypeArray[0]);
+                            RecipeType type = new RecipeType(recipeType);
 
                             recipesTypes.Add(type);
                         }

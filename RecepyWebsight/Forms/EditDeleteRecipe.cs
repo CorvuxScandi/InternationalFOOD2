@@ -31,8 +31,6 @@ namespace RecepyWebsight.Forms
 
         private void cmdAddRecipeType_Click(object sender, EventArgs e)
         {
-
-
             if (txtAddRecipeType.Text == "")
             {
                 MessageBox.Show("Du har inte fyllt i någon ny recepttyp.");
