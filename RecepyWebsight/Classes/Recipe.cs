@@ -13,7 +13,7 @@ namespace RecepyWebsight.Classes
         public List<string> Instructions { get; set; }
         public RecipeType Type { get; set; }
 
-        public Recipe(string name, int id, List<string> ingredients, List<string> instructions, RecipeType type)
+        public Recipe(string name, List<string> ingredients, List<string> instructions, RecipeType type)
         {
             this.Name = name;
             this.Ingredients = ingredients;

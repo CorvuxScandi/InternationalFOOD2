@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace RecepyWebsight.Classes
@@ -83,6 +84,35 @@ namespace RecepyWebsight.Classes
             }
 
             return loginSuccessful;
+        }
+
+        public static List<Recipe> GetRecipes()
+        {
+            List<Recipe> recipes = new List<Recipe>();
+            string filePath = @"..\..\TextFiles\Recepies.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeArray = line.Split(',');
+
+                        RecipeType type = new RecipeType(recipeArray[3]);
+                        Recipe recipe = new Recipe(recipeArray[0], recipeArray[1].Split('-').ToList(), recipeArray[2].Split('-').ToList(), type);
+
+                        recipes.Add(recipe);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            return recipes;
         }
 
         public static void AddRecipe(Recipe recipe)
