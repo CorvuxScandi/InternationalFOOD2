@@ -225,6 +225,7 @@ namespace RecepyWebsight.Classes
                 {
                     using (StreamWriter writer = new StreamWriter(filePath, true))
                     {
+                        writer.WriteLine();
                         writer.Write(recipe.Name);
 
                         writer.Write("#");
@@ -239,7 +240,7 @@ namespace RecepyWebsight.Classes
                             writer.Write(instruction + "-");
                         }
 
-                        writer.Write("#" + recipe.Type + "\n");
+                        writer.Write("#" + recipe.Type.Type);
                     }
                 }
                 catch (Exception ex)

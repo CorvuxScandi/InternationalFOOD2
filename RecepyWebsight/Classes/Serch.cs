@@ -16,15 +16,13 @@ namespace RecepyWebsight.Classes
 
             if (recipeType == "")
             {
-                searchResult = recipeList.Where(recipe => recipe.Name.ToLower().Contains(condition.ToLower()) || 
-                                                recipe.Ingredients.Contains(condition.ToLower()))
+                searchResult = recipeList.Where(recipe => recipe.Name.ToLower().Contains(condition.ToLower()))
                                                 .OrderBy(recipe => recipe.Name).ToList();
             }
             else
             {
-                searchResult = recipeList.Where(recipe => (recipe.Name.ToLower().Contains(condition.ToLower()) || 
-                                                           recipe.Ingredients.Contains(condition.ToLower())) && 
-                                                           recipe.Type.Type == recipeType)
+                searchResult = recipeList.Where(recipe => (recipe.Name.ToLower().Contains(condition.ToLower()) && 
+                                                           recipe.Type.Type == recipeType))
                                                            .OrderBy(recipe => recipe.Name).ToList();
             }
 
