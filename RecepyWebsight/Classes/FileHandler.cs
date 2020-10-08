@@ -86,34 +86,6 @@ namespace RecepyWebsight.Classes
             return loginSuccessful;
         }
 
-        public static List<Recipe> GetRecipes()
-        {
-            List<Recipe> recipes = new List<Recipe>();
-            string filePath = @"..\..\TextFiles\Recepies.txt";
-            string line;
-
-            try
-            {
-                using (StreamReader reader = new StreamReader(filePath))
-                {
-                    while ((line = reader.ReadLine()) != null)
-                    {
-                        string[] recipeArray = line.Split(',');
-
-                        RecipeType type = new RecipeType(recipeArray[3]);
-                        Recipe recipe = new Recipe(recipeArray[0], recipeArray[1].Split('-').ToList(), recipeArray[2].Split('-').ToList(), type);
-
-                        recipes.Add(recipe);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                // TODO: Exception
-            }
-
-            return recipes;
-        }
 
         public static void AddRecipe(Recipe recipe)
         {
@@ -174,6 +146,35 @@ namespace RecepyWebsight.Classes
                     // TODO: Exception
                 }
             }
+        }
+
+        public static List<Recipe> GetRecipes()
+        {
+            List<Recipe> recipes = new List<Recipe>();
+            string filePath = @"..\..\TextFiles\Recepies.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeArray = line.Split(',');
+
+                        RecipeType type = new RecipeType(recipeArray[3]);
+                        Recipe recipe = new Recipe(recipeArray[0], recipeArray[1].Split('-').ToList(), recipeArray[2].Split('-').ToList(), type);
+
+                        recipes.Add(recipe);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            return recipes;
         }
 
         public static void UpdateRecipe(string headline, List<string> ingredients, List<string> instructions, string type)
@@ -239,5 +240,46 @@ namespace RecepyWebsight.Classes
             }
         }
 
+        public static void RemoveRecipe(string headline)
+        {
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\Recepies.txt";
+            string line;
+
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeCheck = line.Split(',');
+
+                        if (recipeCheck[0] != headline)
+                        {
+                            updatedList.Add(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach (string recipe in updatedList)
+                    {
+                        writer.WriteLine(recipe);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
     }
 }
