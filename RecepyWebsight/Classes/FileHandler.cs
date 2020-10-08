@@ -199,7 +199,7 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeCheck = line.Split(',');
+                        string[] recipeCheck = line.Split('#');
 
                         if (recipeCheck[0] == recipe.Name)
                         {
@@ -227,19 +227,19 @@ namespace RecepyWebsight.Classes
                     {
                         writer.Write(recipe.Name);
 
-                        writer.Write(",");
+                        writer.Write("#");
                         foreach (string ingredient in recipe.Ingredients)
                         {
                             writer.Write(ingredient + "-");
                         }
 
-                        writer.Write(",");
+                        writer.Write("#");
                         foreach (string instruction in recipe.Instructions)
                         {
                             writer.Write(instruction + "-");
                         }
 
-                        writer.Write("," + recipe.Type + "\n");
+                        writer.Write("#" + recipe.Type + "\n");
                     }
                 }
                 catch (Exception ex)
@@ -293,19 +293,19 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeCheck = line.Split(',');
+                        string[] recipeCheck = line.Split('#');
 
                         if (recipeCheck[0] == headline)
                         {
                             sb.Append(headline);
 
-                            sb.Append(",");
+                            sb.Append("#");
                             foreach(string ingredient in ingredients)
                             {
                                 sb.Append(ingredient + "-");
                             }
 
-                            sb.Append(",");
+                            sb.Append("#");
                             foreach(string instruction in instructions)
                             {
                                 sb.Append(instruction + "-");
@@ -357,7 +357,7 @@ namespace RecepyWebsight.Classes
                 {
                     while ((line = reader.ReadLine()) != null)
                     {
-                        string[] recipeCheck = line.Split(',');
+                        string[] recipeCheck = line.Split('#');
 
                         if (recipeCheck[0] != headline)
                         {
