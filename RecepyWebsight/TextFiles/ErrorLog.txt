@@ -1,1 +1,16 @@
-﻿
+﻿[2020-10-08 11:29:45] System.IO.FileNotFoundException: Det gick inte att hitta filen C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\TextFiles\Admis.txt.
+Filnamn: C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\TextFiles\Admis.txt
+   vid System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   vid System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   vid System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   vid System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   vid System.IO.StreamReader..ctor(String path)
+   vid RecepyWebsight.Classes.FileHandler.Login(String username, String password) i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 72
+[2020-10-08 11:30:15] System.IO.FileNotFoundException: Det gick inte att hitta filen C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\TextFiles\Admis.txt.
+Filnamn: C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\TextFiles\Admis.txt
+   vid System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   vid System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   vid System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   vid System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   vid System.IO.StreamReader..ctor(String path)
+   vid RecepyWebsight.Classes.FileHandler.Login(String username, String password) i C:\Users\Aitch\Source\Repos\CorvuxScandi\InternationalFOOD2\RecepyWebsight\Classes\FileHandler.cs:rad 72

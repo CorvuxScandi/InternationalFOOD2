@@ -4,12 +4,12 @@ using System.Security.Policy;
 
 namespace RecepyWebsight.Classes
 {
-    public class ErrorHandler
+    public class ErrorHandler : Exception
     {
         public DateTime Time { get; set; }
-        public string GivenException { get; set; }
+        public Exception GivenException { get; set; }
 
-        public ErrorHandler(string exception)
+        public ErrorHandler(Exception exception)
         {
             this.Time = DateTime.Now;
             this.GivenException = exception;

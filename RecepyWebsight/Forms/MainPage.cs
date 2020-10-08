@@ -85,7 +85,7 @@ namespace RecepyWebsight
             List<Recipe> recipes = FileHandler.GetRecipes();
             int targetRecipeIndex = recipes.IndexOf((Recipe)recipes.Where(r => r.Name == lstRecepie.SelectedItem.ToString()));
 
-            ImgFood.Image = imageList1.Images[ ];
+           // ImgFood.Image = imageList1.Images[ ];
         }
     }
 }

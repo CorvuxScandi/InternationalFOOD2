@@ -1,4 +1,5 @@
 ﻿using RecepyWebsight.Classes;
+using RecepyWebsight.TextFiles.Errormessage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,17 +51,17 @@ namespace RecepyWebsight.Forms
 
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Login button
         {
-           
-            if(FileHandler.Login(txtUsername.Text, txtPassword.Mask))
+
+            if(FileHandler.Login(txtUsername.Text, txtPassword.Text))
             {
                 frm1.ShowEdit();
                 this.Close();
             }
             else
             {
-
+                MessageBox.Show(ErrorMessages.Wrong_login);
             }
 
         }
