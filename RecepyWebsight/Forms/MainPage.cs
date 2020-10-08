@@ -22,13 +22,17 @@ namespace RecepyWebsight
 
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e) //lstRecipe
         {
+            int currentRecipeIndex = int.Parse(numRecepie.Value.ToString());
 
+            ImgFood.Image = imageList1.Images[currentRecipeIndex - 1];
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
+
+
 
         }
     }

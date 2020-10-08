@@ -59,5 +59,23 @@ namespace RecepyWebsight.TextFiles.Errormessage {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Det finns redan ett recept med samma namn.
+        /// </summary>
+        internal static string Duplicate {
+            get {
+                return ResourceManager.GetString("Duplicate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fel lösenord eller användarnamn.
+        /// </summary>
+        internal static string Wrong_login {
+            get {
+                return ResourceManager.GetString("Wrong login", resourceCulture);
+            }
+        }
     }
 }
