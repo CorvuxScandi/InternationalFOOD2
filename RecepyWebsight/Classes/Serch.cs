@@ -19,9 +19,15 @@ namespace RecepyWebsight.Classes
                 searchResult = recipeList.Where(recipe => recipe.Name.ToLower().Contains(condition.ToLower()))
                                                 .OrderBy(recipe => recipe.Name).ToList();
             }
+            else if(condition == "")
+            {
+                searchResult = recipeList.Where(recipe => (
+                                                           recipe.Type.Type == recipeType))
+                                                           .OrderBy(recipe => recipe.Name).ToList();
+            }
             else
             {
-                searchResult = recipeList.Where(recipe => (recipe.Name.ToLower().Contains(condition.ToLower()) && 
+                searchResult = recipeList.Where(recipe => (recipe.Name.ToLower().Contains(condition.ToLower()) &&
                                                            recipe.Type.Type == recipeType))
                                                            .OrderBy(recipe => recipe.Name).ToList();
             }

@@ -1,1 +1,2 @@
 ﻿Oscar,Lindholm,osclin,123,oscar@gmail.com
+Håkan,Adenbäck,ha,123,ha@gmail.com
