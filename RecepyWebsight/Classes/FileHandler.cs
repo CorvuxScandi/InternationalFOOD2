@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
 namespace RecepyWebsight.Classes
 {
@@ -86,7 +88,6 @@ namespace RecepyWebsight.Classes
         public static void AddRecipe(Recipe recipe)
         {
             string filePath = @"..\..\TextFiles\Recepies.txt";
-            int instructionNumber = 1;
             string line;
             bool recpieExist = false;
 
@@ -133,7 +134,6 @@ namespace RecepyWebsight.Classes
                         foreach (string instruction in recipe.Instructions)
                         {
                             writer.Write(instruction + "-");
-                            instructionNumber++;
                         }
 
                         writer.Write("," + recipe.Type + "\n");
@@ -146,7 +146,68 @@ namespace RecepyWebsight.Classes
             }
         }
 
+        public static void UpdateRecipe(string headline, List<string> ingredients, List<string> instructions, string type)
+        {
+            StringBuilder sb = new StringBuilder();
+            List<string> updatedList = new List<string>();
+            string filePath = @"..\..\TextFiles\Recepies.txt";
+            string line;
 
+            try
+            {
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] recipeCheck = line.Split(',');
+
+                        if (recipeCheck[0] == headline)
+                        {
+                            sb.Append(headline);
+
+                            sb.Append(",");
+                            foreach(string ingredient in ingredients)
+                            {
+                                sb.Append(ingredient + "-");
+                            }
+
+                            sb.Append(",");
+                            foreach(string instruction in instructions)
+                            {
+                                sb.Append(instruction + "-");
+                            }
+
+                            sb.AppendLine(type);
+
+                            updatedList.Add(sb.ToString());
+                        }
+                        else
+                        {
+                            updatedList.Add(line);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // TODO: Exception
+            }
+
+            try
+            {
+                using (StreamWriter writer = new StreamWriter(filePath))
+                {
+                    foreach(string recipe in updatedList)
+                    {
+                        writer.WriteLine(recipe);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                // TODO: Exception
+            }
+        }
 
     }
 }
