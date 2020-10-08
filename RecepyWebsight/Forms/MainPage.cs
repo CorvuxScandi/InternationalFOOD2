@@ -39,14 +39,14 @@ namespace RecepyWebsight
 
         private void cmdLogin_Click(object sender, EventArgs e)
         {
-            using (LogIn logIn = new LogIn(this))
-            {
-                logIn.Show();
-            } 
-
+            LogIn logIn = new LogIn(this);
             
+                logIn.Show();
 
         }
+    
+
+       
 
         public void ShowEdit()
         {

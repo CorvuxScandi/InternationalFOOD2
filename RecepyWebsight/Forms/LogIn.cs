@@ -14,7 +14,7 @@ namespace RecepyWebsight.Forms
 {
     public partial class LogIn : Form
     {
-        public FrmCookBook frm1;
+        private FrmCookBook frm1;
 
         public LogIn(FrmCookBook frm1)
         {
